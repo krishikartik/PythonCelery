@@ -21,7 +21,7 @@ destination.delete_many({})
 def Copy():
     for doc in source:
         result = destination.insert_one(doc)
-		# destination.update_one({'_id':result.inserted_id},{'$set':{"date":datetime.datetime.utcnow()}})
+		destination.update_one({'_id':result.inserted_id},{'$set':{"date":datetime.datetime.utcnow()}})
     print("Copy done")
 
 from Tasks import *
